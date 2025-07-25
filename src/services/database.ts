@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import path from 'path';
-import fs from 'fs';
+
 
 // Load environment variables from database.env
 dotenv.config({ path: path.resolve(process.cwd(), 'database.env') });
