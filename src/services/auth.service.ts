@@ -92,17 +92,15 @@ class AuthService {
 
   // Generate JWT token
   generateToken(user: User): string {
-    return jwt.sign(
-      { id: user.id, email: user.email }, 
-      JWT_SECRET as jwt.Secret, 
-      { expiresIn: JWT_EXPIRES_IN }
-    );
+    const payload = { id: user.id, email: user.email };
+    const options = { expiresIn: JWT_EXPIRES_IN };
+    return jwt.sign(payload, JWT_SECRET, options);
   }
 
   // Verify JWT token
   verifyToken(token: string): any {
     try {
-      return jwt.verify(token, JWT_SECRET as jwt.Secret);
+      return jwt.verify(token, JWT_SECRET);
     } catch (error) {
       console.error('Error verifying token:', error);
       throw new Error('Invalid token');

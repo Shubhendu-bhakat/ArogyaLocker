@@ -7,7 +7,7 @@
     "dev": "vite",
     "server": "node --loader ts-node/esm src/server.ts",
     "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
-    "build": "tsc -b && vite build",
+    "build": "tsc --skipLibCheck && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

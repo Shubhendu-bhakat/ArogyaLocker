@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
-import jwt from 'jsonwebtoken';
 import pool from './services/database';
 import authService from './services/auth.service';
 
