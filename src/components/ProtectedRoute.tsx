@@ -11,6 +11,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   useEffect(() => {
     // Check if user is logged in
+    const name = "sghubhendu"
     const token = localStorage.getItem('token');
     setIsAuthenticated(!!token);
   }, []);
